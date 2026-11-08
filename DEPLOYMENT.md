@@ -4,11 +4,11 @@ Use a dedicated GitHub repository for this project and a single Docker service w
 
 ## Railway
 
-1. Create a service from this GitHub repository. The included `railway.json` selects `Dockerfile.demo` and the health check automatically.
+1. Create a service from this GitHub repository. In service Settings, select `Dockerfile.demo` as the Dockerfile path. Configure these settings directly: new Railway services no longer opt into the legacy `railway.json` format.
 2. Attach one volume at `/app/data`. Use one replica. Set `RAILWAY_RUN_UID=0` if required for the mounted volume's ownership.
 3. Set `ADMIN_PASSWORD` to a unique random value with at least 16 characters in Railway's variable settings. Do not commit it.
 4. Generate a public domain targeting port `8080`. Set `DEMO_PUBLIC_ORIGIN` to its exact HTTPS origin, with no trailing slash. Alternatively the launcher uses `RAILWAY_PUBLIC_DOMAIN` if supplied by Railway.
-5. Set the health check path to `/healthz` and deploy. Open `/demo` with username `admin` and the password above. The same credentials open `/admin`.
+5. Set the health check path to `/healthz`, leave one replica, and deploy. Open `/demo` with username `admin` and the password above. The same credentials open `/admin`.
 6. Run a complete test with both **Send the same webhook twice** and **Fail the next email attempt** enabled. Verify one accepted email and a notified alert. Restart the deployment and verify the records persist.
 
 Share the application URL and reviewer password privately in the proposal. The demo remains protected by authentication over HTTPS. It only accepts synthetic `@example.com` email addresses. No domain purchase or real Resend account is needed.
