@@ -1,0 +1,12 @@
+{
+  "name": "back-in-stock-alerts",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node src/server.ts",
+    "demo:prepare": "node scripts/fetch-harness.mjs",
+    "demo": "node src/start-demo.ts",
+    "test": "node --test"
+  }
+}
