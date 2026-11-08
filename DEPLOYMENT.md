@@ -4,7 +4,7 @@ Use a dedicated GitHub repository for this project and a single Docker service w
 
 ## Railway
 
-1. Create a service from this GitHub repository. Set `RAILWAY_DOCKERFILE_PATH=Dockerfile.demo` before its first successful deployment.
+1. Create a service from this GitHub repository. The included `railway.json` selects `Dockerfile.demo` and the health check automatically.
 2. Attach one volume at `/app/data`. Use one replica. Set `RAILWAY_RUN_UID=0` if required for the mounted volume's ownership.
 3. Set `ADMIN_PASSWORD` to a unique random value with at least 16 characters in Railway's variable settings. Do not commit it.
 4. Generate a public domain targeting port `8080`. Set `DEMO_PUBLIC_ORIGIN` to its exact HTTPS origin, with no trailing slash. Alternatively the launcher uses `RAILWAY_PUBLIC_DOMAIN` if supplied by Railway.
