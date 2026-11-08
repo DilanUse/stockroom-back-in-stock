@@ -12,6 +12,8 @@ Stockroom lets a shopper ask for a one-time email when an item comes back in sto
 
 ### Live demo
 
+[Open the hosted Stockroom demo](https://stockroom-back-in-stock-production.up.railway.app/demo). Sign in as `admin` with the reviewer password provided privately. The demo includes its own simulator and uses synthetic data only.
+
 For an all-in-one local demo, run `npm run demo:prepare` once, then `npm run demo`. Open [the demo](http://127.0.0.1:8080/demo). This downloads a fixed revision of the official public simulator, verifies its checksum, and starts it on a private loopback port. Synthetic credentials and test data are generated locally, with no real email account required.
 
 **Run complete test** sells out the selected product, registers an alert, and restocks it. The inbox, alert status, and stock activity update automatically. Individual controls let you test duplicate webhooks, false restocks, and an injected email failure. Every message is captured by the simulator. Use `@example.com` addresses.
